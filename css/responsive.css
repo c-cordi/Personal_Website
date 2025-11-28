@@ -370,3 +370,67 @@
     font-size: 1.5rem;
   }
 }
+
+/* Touch devices: show PDF download button instead of embed */
+@media (pointer: coarse) {
+  .pdf-container {
+    min-height: auto;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .pdf-viewer {
+    display: none;
+  }
+  
+  .pdf-fallback {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 40px 20px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .pdf-fallback::before {
+    content: "📄";
+    font-size: 48px;
+  }
+  
+  .pdf-fallback a {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #7e90a3;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .pdf-fallback a:hover {
+    background: #6a7c8f;
+    transform: translateY(-2px);
+  }
+  
+  /* Larger project logos on touch devices */
+  .project-logo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Fallback for hover: none */
+@media (hover: none) {
+  .pdf-viewer {
+    display: none;
+  }
+  
+  .pdf-fallback {
+    display: flex !important;
+  }
+}
