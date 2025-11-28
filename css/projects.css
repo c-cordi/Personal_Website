@@ -30,10 +30,10 @@
 }
 
 .project-logo {
-  width: 10vw;
-  height: 10vw;
+  width: clamp(60px, 10vw, 120px);
+  height: clamp(60px, 10vw, 120px);
   margin-bottom: 15px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-card h3 {

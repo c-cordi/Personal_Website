@@ -42,7 +42,6 @@ function copyEmail() {
   
   // Copy to clipboard
   navigator.clipboard.writeText(email).then(function() {
-    // Change text to "Copied to clipboard"
     copyText.textContent = 'Copied to clipboard!';
     copyText.classList.add('copied');
     copyText.classList.add('show');
@@ -96,7 +95,7 @@ function switchToTab(tabName) {
 
 // Function to handle URL hash changes
 function handleHashChange() {
-  const hash = window.location.hash.slice(1); // Remove the # symbol
+  const hash = window.location.hash.slice(1);
   
   if (hash) {
     // Check if it's a project detail
@@ -105,11 +104,9 @@ function handleHashChange() {
       switchToTab('projects');
       setTimeout(() => showProjectDetail(projectId), 100);
     } else {
-      // It's a regular tab
       switchToTab(hash);
     }
   } else {
-    // No hash, default to landing page
     switchToTab('landing');
   }
 }
@@ -138,7 +135,6 @@ document.querySelectorAll('.project-card').forEach(card => {
 window.addEventListener('hashchange', handleHashChange);
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Handle hash on page load
   handleHashChange();
   
   const posterImage = document.querySelector('.poster-image');
@@ -146,5 +142,38 @@ document.addEventListener('DOMContentLoaded', function() {
     posterImage.addEventListener('click', function() {
       window.open(this.src, '_blank');
     });
+  }
+});
+
+function toggleMobileNav() {
+  const sidebar = document.querySelector('.sidebar');
+  const hamburger = document.querySelector('.hamburger');
+  
+  sidebar.classList.toggle('nav-open');
+  hamburger.classList.toggle('active');
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const hamburger = document.querySelector('.hamburger');
+    
+    if (window.innerWidth <= 768) {
+      sidebar.classList.remove('nav-open');
+      hamburger.classList.remove('active');
+    }
+
+  });
+});
+
+document.addEventListener('click', (e) => {
+  const sidebar = document.querySelector('.sidebar');
+  const hamburger = document.querySelector('.hamburger');
+  
+  if (window.innerWidth <= 768 && 
+      !sidebar.contains(e.target) && 
+      sidebar.classList.contains('nav-open')) {
+    sidebar.classList.remove('nav-open');
+    hamburger.classList.remove('active');
   }
 });

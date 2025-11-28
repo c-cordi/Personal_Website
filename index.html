@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://static.cloudflareinsights.com">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="./css/main.css" as="style">
+  <link rel="preload" href="./assets/images/sun.svg" as="image">
+  <link rel="preload" href="./assets/images/moon.svg" as="image">
+  
+  <!-- DNS prefetch for external links -->
+  <link rel="dns-prefetch" href="https://github.com">
+  <link rel="dns-prefetch" href="https://www.linkedin.com">
+  
   <title>Who Am I? - Cristiano Cordì</title>
+  
+  <!-- Enhanced meta description (keep your existing one, it's good) -->
   <meta name="description" content="Bioinformatician specializing in machine learning and regulatory genomics. Explore my projects, CV and contact information." />
   <meta name="author" content="Cristiano Cordì">
   <meta name="keywords" content="Cristiano Cordì, Bioinformatician, Machine Learning, Regulatory Genomics, Projects, CV, Contact, Bioinformatics, Single-cell Transcriptomics, Spatial Transcriptomics, Who Am I, c-cordi" />
   
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#7e90a3">
+  <meta name="theme-color" content="#2d2d2d" media="(prefers-color-scheme: dark)">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://c-cordi.com/">
+
   <!-- Open Graph / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://c-cordi.com/" />
@@ -16,6 +38,13 @@
   <meta property="og:image" content="https://c-cordi.com/assets/images/preview.png" />
   <meta property="og:image:alt" content="Cristiano Cordì - Bioinformatician" />
   
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cristiano Cordì - Bioinformatician">
+  <meta name="twitter:description" content="Bioinformatician specializing in machine learning and regulatory genomics.">
+  <meta name="twitter:image" content="https://c-cordi.com/assets/images/preview.png">
+
+
   <script>
     (function() {
       const savedDarkMode = localStorage.getItem('darkMode');
@@ -41,6 +70,11 @@
   <div class="container">
     <!-- Navigation Sidebar -->
     <nav class="sidebar">
+      <button class="hamburger" aria-label="Toggle navigation" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <h3>Navigation</h3>
       <button class="tab-btn active" data-tab="landing">Landing Page</button>
       <button class="tab-btn" data-tab="projects">Projects</button>
@@ -61,7 +95,7 @@
     </nav>
 
     <!-- Main Content Area -->
-    <main class="tab-content">
+    <main class="tab-content", id="main-content">
       
       <!-- Landing Page Section -->
       <section id="landing" class="tab-panel active">
@@ -72,7 +106,7 @@
             <p>Here you can find information about my projects, CV, and how to contact me.</p>
           </div>
           <div class="landing-video-container">
-            <video class="landing-video" autoplay muted loop playsinline>
+            <video class="landing-video" autoplay muted loop playsinline preload="metadata">
               <source src="./assets/videos/background-video.webm" type="video/webm">
               Your browser does not support the video tag.
             </video>
@@ -344,6 +378,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="scripts.js"></script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>

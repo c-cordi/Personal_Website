@@ -22,3 +22,33 @@
   z-index: 1;
   pointer-events: none;
 }
+
+@media (max-width: 768px) {
+  .landing-content {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .landing-text {
+    padding: 15px;
+  }
+  
+  .landing-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .landing-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .landing-video-container {
+    border-radius: 0;
+  }
+  
+  .landing-video {
+    border-radius: 0;
+  }
+}

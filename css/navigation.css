@@ -56,20 +56,114 @@
   box-shadow: 0 2px 8px rgba(126, 144, 163, 0.3);
 }
 
-/* Mobile navigation adjustments */
-@media (max-width: 768px) {
-  .sidebar {
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+  gap: 6px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #7e90a3;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Dark mode hamburger */
+html.dark-mode .hamburger span {
+  background: #9bb5d1;
+}
+
+@media (max-width: 1400px) {
+  .hamburger {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .sidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-width: auto;
+    max-width: none;
+    padding: 15px;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    box-sizing: border-box;
   }
   
   .sidebar h3 {
-    text-align: center;
-    margin-bottom: 10px;
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-size: 1.1rem;
   }
   
-  .tab-btn {
-    margin-bottom: 5px;
+  /* Hide nav items by default on mobile */
+  .sidebar .tab-btn {
+    display: none;
+    width: auto;
+    margin: 5px;
+    padding: 10px 15px;
+  }
+  
+  .sidebar .dark-mode-switch-container {
+    display: none;
+    margin-top: 15px;
+  }
+  
+  /* Show nav items when sidebar is expanded */
+  .sidebar.nav-open {
+    padding-bottom: 20px;
+  }
+  
+  .sidebar.nav-open .tab-btn {
+    display: inline-block;
+  }
+  
+  .sidebar.nav-open .dark-mode-switch-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sidebar.nav-open h3 {
+    display: block;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #7e90a3;
   }
 }
