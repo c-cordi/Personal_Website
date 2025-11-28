@@ -120,6 +120,27 @@ html.dark-mode .dark-mode-switch-container {
   border-color: #555;
 }
 
+html.dark-mode .pdf-fallback {
+  background: #3a3a3a;
+}
+
+html.dark-mode .pdf-fallback a {
+  background: #9bb5d1;
+  color: #1a1a1a;
+}
+
+html.dark-mode .pdf-fallback a:hover {
+  background: #8aa7c4;
+}
+
+html.dark-mode .poster-fallback {
+  background: #3a3a3a;
+}
+
+html.dark-mode .poster-fallback a {
+  color: #9bb5d1;
+}
+
 @keyframes switchToggle {
   0% { 
     transform: translateX(0) scale(1); 
