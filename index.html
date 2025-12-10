@@ -6,7 +6,10 @@
   
   <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://static.cloudflareinsights.com">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <!-- Preload critical resources -->
   <link rel="preload" href="./css/main.css" as="style">
   <link rel="preload" href="./assets/images/sun.svg" as="image">
@@ -97,26 +100,26 @@
     <!-- Main Content Area -->
     <main class="tab-content", id="main-content">
       
-      <!-- Landing Page Section -->
-      <section id="landing" class="tab-panel active">
-        <div class="landing-content">
-          <div class="landing-text">
-            <h2>Hello!</h2>
-            <p>I'm Cristiano Cordì, a bioinformatician with a passion for machine learning and regulatory genomics.</p>
-            <p>Here you can find information about my projects, CV, and how to contact me.</p>
-          </div>
-
-          <picture class="landing-visual">
-            <img src="./assets/videos/landing-animation.png" alt="Landing One_hot" class="landing-animation-img" loading="lazy">
-          </picture>
-          
-          <div class="landing-video-container">
-            <video class="landing-video" autoplay muted loop playsinline preload="metadata">
-              <source src="./assets/videos/background-video.webm" type="video/webm">
-            </video>
-          </div>
+    <!-- Landing Page Section -->
+    <section id="landing" class="tab-panel active">
+      <div class="landing-content">
+        <div class="landing-text">
+          <h2 class="typewriter" data-text="Hello!" data-delay="0"></h2>
+          <p class="typewriter" data-text="I'm Cristiano Cordì, a bioinformatician with a passion for machine learning and regulatory genomics." data-delay="600"></p>
+          <p class="typewriter" data-text="Here you can find information about my projects, CV, and how to contact me." data-delay="3500"></p>
         </div>
-      </section>
+
+        <picture class="landing-visual fade-in-element" data-delay="6000">
+          <img src="./assets/videos/landing-animation.png" alt="Landing One_hot" class="landing-animation-img" loading="lazy">
+        </picture>
+        
+        <div class="landing-video-container fade-in-element" data-delay="6000">
+          <video class="landing-video" autoplay muted loop playsinline preload="metadata">
+            <source src="./assets/videos/background-video.webm" type="video/webm">
+          </video>
+        </div>
+      </div>
+    </section>
 
       <!-- Projects Section -->
       <section id="projects" class="tab-panel">
@@ -174,9 +177,9 @@
           <div class="project-detail-split">
             <div class="project-detail-left">
               <h3>Overview</h3>
-              <p>TRIDENT is a Blender add-on designed for bioinformaticians who need to generate three-dimensional visualizations of dimensionality reduction methods such as UMAP, t-SNE, or PCA.</p>
-              <p>By using the rendering power of the Blender EEVEE engine, TRIDENT provides realtime navigation of data clouds, seamless color labeling of categories, and the ability to export publication-ready figures or smooth animations for presentations.</p>
-                <p>The extension is also available officially on Blender Extensions: <a href="https://extensions.blender.org/trident" target="_blank" style="color: #7e90a3; text-decoration: underline;">https://extensions.blender.org/trident</a></p>
+              <p><strong>TRIDENT</strong> is a Blender add-on designed for bioinformaticians who need to generate three-dimensional visualizations of dimensionality reduction methods such as <strong>UMAP</strong>, <strong>t-SNE</strong>, or <strong>PCA</strong>.</p>
+              <p>By using the rendering power of the Blender <strong>EEVEE</strong> engine, <strong>TRIDENT</strong> provides realtime navigation of data clouds, seamless color labeling of categories, and the ability to export publication-ready figures or smooth animations for presentations.</p>
+              <p>The extension is also available officially on <strong>Blender Extensions</strong>: <a href="https://extensions.blender.org/trident" target="_blank" style="color: #7e90a3; text-decoration: underline;">https://extensions.blender.org/trident</a></p>
               <h3>Key Features</h3>
               <ul>
                 <li>Real-time 3D visualization of embeddings</li>
@@ -203,7 +206,7 @@
           <div class="project-content-split">
             <div class="project-left">
               <h3>Overview</h3>
-              <p>Open Nano is a free open-source python package developed to address a lack of Python-based tools for analyzing Nanostring GeoMx DSP data.</p>
+              <p><strong>OpenNano</strong> is a free open-source python package developed to address a lack of Python-based tools for analyzing <strong>Nanostring GeoMx DSP data</strong>.</p>
               
               <h3>Documentation</h3>
               <p>The package comes with comprehensive documentation that can be found on the <a href="https://opennano.pages.dev/" target="_blank">OpenNano website</a>.</p>
@@ -275,11 +278,11 @@
           <h2>Bachelor Thesis - CCRL2 in Lung Cancer Prognosis</h2>
           <div class="project-detail-left"> 
             <h3>Abstract</h3>
-            <p>Investigation of CCRL2 expression patterns combined with specialized endothelial cell signatures as prognostic markers in human lung cancer patients.</p>
+            <p>Investigation of <strong>CCRL2</strong> expression patterns combined with specialized endothelial cell signatures as prognostic markers in human lung cancer patients.</p>
             
             <h3>Key Findings</h3>
             <ul>
-              <li>Identified CCRL2 as significant prognostic marker</li>
+              <li>Identified <strong>CCRL2</strong> as significant prognostic marker</li>
               <li>Characterized endothelial cell signatures</li>
               <li>Developed predictive models for patient outcomes</li>
               <li>Validated results across multiple patient cohorts</li>

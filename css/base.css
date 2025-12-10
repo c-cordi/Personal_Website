@@ -1,10 +1,14 @@
 /* Base styles and typography */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Fragment Mono', 'Consolas', 'Menlo', monospace;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
   overflow-x: hidden;
+}
+
+.tab-content {
+  border: 1px solid #e0e0e0;
 }
 
 footer {
@@ -23,6 +27,7 @@ footer {
 /* Mobile text sizing */
 @media (max-width: 768px) {
   body {
+    font-family: 'Fragment Mono', 'Consolas', 'Menlo', monospace;
     font-size: 14px;
     line-height: 1.5;
   }

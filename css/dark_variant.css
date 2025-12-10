@@ -241,6 +241,7 @@ html.dark-mode .tab-btn.active {
 html.dark-mode .tab-content {
   background: #2d2d2d;
   color: #e0e0e0;
+  border-color: #404040;
 }
 
 html.dark-mode .tab-content h2 {
