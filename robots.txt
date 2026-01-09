@@ -1,6 +1,6 @@
 # Robots.txt for c-cordi.com
 User-agent: *
 Allow: /
-Disallow: /assets/documents/
-Disallow: /assets/images/
-Disallow: /assets/videos/
+Disallow: /assets/
+
+Sitemap: https://c-cordi.com/sitemap.xml
